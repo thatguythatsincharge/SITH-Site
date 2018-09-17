@@ -23,14 +23,14 @@
 			<h2 class="movie-header">Main Characters</h2>
 
 			<ul id="characterList">
-				<% for (var i = 0;i<currentMovie.main_characters.length;i++) {%>
+				<%= for (var i=0; i<currentMovie.main_characters.length; i++) {%>
 					<li>
 						<a class="characterItem" href="<%= currentMovie.character_links[i] %>" target="_blank">
 							<%= currentMovie.main_characters[i] %>
 						</a>
 					</li>
 					<br />
-				<% } %>
+				<%= } %>
 			</ul>
 
 		</div>
@@ -38,4 +38,16 @@
 
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    // for movie_single.ejs
+		    (".characterItem").hover(function(){
+				//$(this)document.getElementById
+				$("#characterList").append('<iframe id="preveiwFrame" src="<%= currentMovie.character_links[i] %>" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>');
+		    }, function(){
+		        $(this).remove("#preveiwFrame");
+		    });
+		});
+	</script>
 <% include partials/footer.ejs %>
