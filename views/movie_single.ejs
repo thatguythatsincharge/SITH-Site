@@ -23,14 +23,14 @@
 			<h2 class="movie-header">Main Characters</h2>
 
 			<ul id="characterList">
-				<%= for (var i=0; i<currentMovie.main_characters.length; i++) {%>
+				<% for (var i=0; i<currentMovie.main_characters.length; i++) {%>
 					<li>
 						<a class="characterItem" href="<%= currentMovie.character_links[i] %>" target="_blank">
 							<%= currentMovie.main_characters[i] %>
 						</a>
 					</li>
 					<br />
-				<%= } %>
+				<% } %>
 			</ul>
 
 		</div>
