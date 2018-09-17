@@ -1,0 +1,41 @@
+<% include partials/header.ejs %>
+
+<div id="hero-image-single" style="background-image: url('/img/<%= currentMovie.hero_image%>');">
+	<h1 id="hero-title"><%= currentMovie.title %></h1>
+</div>
+
+<div class="content-padding clearfix">
+	<div class="poster-wrapper">
+		<img src="/img/<%=currentMovie.poster%>" class="img-responsive">
+	</div>
+
+	<div class="description-wrapper">
+		<div class="description">
+			<h2 class="movie-header">
+				Description
+			</h2>
+
+			<p><%= currentMovie.description %></p>
+
+		</div>
+
+		<div class="main-characters">
+			<h2 class="movie-header">Main Characters</h2>
+
+			<ul id="characterList">
+				<% for (var i = 0;i<currentMovie.main_characters.length;i++) {%>
+					<li>
+						<a class="characterItem" href="<%= currentMovie.character_links[i] %>" target="_blank">
+							<%= currentMovie.main_characters[i] %>
+						</a>
+					</li>
+					<br />
+				<% } %>
+			</ul>
+
+		</div>
+	</div>
+
+</div>
+
+<% include partials/footer.ejs %>
