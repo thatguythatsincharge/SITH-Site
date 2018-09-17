@@ -1,28 +1,24 @@
 <% include partials/header.ejs %>
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<div id="hero-image">
-		<h1 id="hero-title">Star Wars Movies</h1>
-	</div>
-	
-	<div class="content-padding clearfix col-sm-12" id="posters-wrapper">
-		<%for(var i = 0; i<movies.length; i++) { %>
-		
-		<div class="poster">
-			<a href="/star_wars_episode/<%=movies[i].episode_number%>"><img class="img-responsive" src="/img/<%=movies[i].poster%>">
-				
-			<div class="poster-info-overlay">
-				<h3><%= movies[i].title %></h3>
-				<h4>View More <i class="fa fa-arrow-right"></i></h4>
-			</div>
-				</a>
+		<div id="hero-image">
+			<h1 id="hero-title">
+				Star Wars Movies
+			</h1>
 		</div>
+		<div class="content-padding clearfix col-sm-12" id="posters-wrapper">
+			<%for(var i = 0; i<movies.length; i++) { %>
+				<div class="poster">
+					<a href="/star_wars_episode/<%=movies[i].episode_number%>">
+						<img class="img-responsive" src="/img/<%=movies[i].poster%>">	
+						<div class="poster-info-overlay">
+							<h3>
+								<%= movies[i].title %>
+							</h3>
+							<h4>
+								View More 
+								<i class="fa fa-arrow-right"></i>
+							</h4>
+						</div>
+					</a>
+				</div>
 			<%} %>
-			
-	</div><%include partials/footer.ejs %>
-</body>
-</html>
+		</div><%include partials/footer.ejs %>
