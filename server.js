@@ -69,7 +69,7 @@ app.get('/star_wars_episode/:episode_number?', function(req, res) {
 	res.render("movie_single", {movies: moviesArray, currentMovie: currentMovie });
 });
 
-let port = process.env.PORT;
+port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
